@@ -1,0 +1,36 @@
+---
+layout: default
+title: Documentation - Order Processing - Corvus Open source Code Order Fulfilment and Management Software - Gazatem Technologies
+---
+
+{{> navbar}} 
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-3">
+                {{> doc-navi }} 
+            </div>
+
+			<div class="col-lg-9 col-md-9 col-sm-9">
+                <h2>Documentation</h2>
+                <h3>Order Processing</h3>
+                <br /><br /> Customers can add their orders using online upload tool or using Customer API system. When a new order saved into the database, the system automatically try to process the order.
+                <br /><br /><br /><br />
+                The system checks the following attributes for each products in the order file or API call.
+                <br /><br />
+                <ul>
+                <li>if the product is existing in warehouse and stock level is enough for ordered quantity</li>
+                <li>if the product has a price group that matching with customer's price group</li>
+                <li>if the product has a stock group that matching with customer's stock group</li>
+                </ul>
+                <br /><br />
+                <img src="/assets/img/documents/order-list.jpg" class="img-fluid">
+                <br /><br />
+                If the system can validate all these steps in order, start to process the order. First updates the stock levels in Warehouse and update the order status. If it fails, you may always process the order manually from backoffice. The system creates the notes in order file why the ordered product failed in the automated process. If you see that price or stock group is wrong, you may update it. If the stock level is not enough, you may manage the stocks in warehouse module to let the customer order the product.
+                <br /><br /><br /><br />
+                <img src="/assets/img/documents/order-view.jpg" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+---
+layout: default
+title: Quickstart - Corvus Open source Code Order Fulfilment and Management Software - Gazatem Technologies
+---
+
+{{> navbar}} 
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+                <h2>Quickstart</h2>
+                  <br/><br/>       
+                <h3>Download</h3>
+                <br/>
+                <p>
+<a href="https://github.com/corvus-tech/software"class="btn btn-sm btn-solid-border btn-round-full"  target="_blank"><i class="fab fa-github"></i> Clone the source code </a>
+
+<a href="https://github.com/corvus-tech/software/archive/master.zip" class="btn btn-sm btn-solid-border btn-round-full" target="_blank"><i class="fa fa-download"></i> Download the source code</a>                
+                </p>    
+                   <br/>   <br/>
+                <h3>Installation</h3>
+                <p>The application is using .env file to store application configuration variables. Please, copy from  .env.example and update the variables as your server.</p>
+                <br/>
+                <p>We're using Laravel Framework. Laravel project dependencies are managed through the PHP Composer tool. The first step is to install the depencencies by navigating into your project in terminal and typing following command. This will install the libraries.</p>
+                <br/>
+                <code>composer install</code>
+                <br/><br/>
+                <p>more information on setup the framework visit Laravel <a target="_blank" href="https://laravel.com/docs/6.x#installing-laravel">start page</a>
+                <br/>
+                <p>Now next command setup the database.</p>                
+                <br/>
+                <code>php artisan migrate</code>
+                <br/><br/>
+                <p>After the database tables setup, you need to insert a sample data with some sample users</p>                
+                <br/>
+                <code>php artisan db:seed</code>
+                <br/><br/>
+                <p>After your project is installed you must run this command to link your public storage folder for uploads</p>
+                <br/>
+                <code>php artisan storage:link</code>
+                <br/><br/>         
+                
+                <p>Now, you may login to your system using following credentials.</p>
+                
+                <blockquote>
+                <b>Username:</b> admin@gazatem.com<br/>         
+                <b>Password: </b>admin<br/>         
+                                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.slider{
+  /*background: url("/storage/app/media/warehouse-inventory-management-front.jpg") no-repeat;*/
+  background-size: cover; 
+  background-position: 10% 0%;
+  padding:50px 0 80px 0;
+  position: relative; 
+  background-color: #f9f9f9;
+  @extend .overly;
+  .block{
+    h1{
+      font-size: 70px;
+      line-height: 80px;
+      font-weight: 600;
+      color: $light;
+
+    }
+    p{
+      margin-bottom:30px;
+      color:#fefefe;
+      font-size: 18px;
+      line-height: 27px;
+      font-weight: 300;
+    }
+
+    span{
+      letter-spacing: 1px;
+    }
+  }
+}

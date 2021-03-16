@@ -1,0 +1,124 @@
+---
+layout: default
+title: Documentation - Customer Orders - Corvus Open source Code Order Fulfilment and Management Software - Gazatem Technologies
+---
+
+{{> navbar}} 
+
+<section class="section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-3">
+                {{> doc-navi }} 
+            </div>
+
+			<div class="col-lg-9 col-md-9 col-sm-9">
+                <h2>Documentation</h2>
+                <h3>Customer Orders</h3>
+                <br /><br /> Customers can add their orders using online upload tool or using Customer API system. When a new order saved into the database, the system automatically try to process the order.
+                <br /><br /> <br /><br />
+                <h3>File Upload</h3> <br /><br />
+                <img src="/assets/img/documents/upload-order.jpg" class="img-fluid">
+                <br /><br />
+                <h3>Order with API </h3> <br /><br />
+                <ul>
+                <li>POST | {URL}/api/orders</li>
+                <li>GET | {URL}/api/orders</li>
+                <li>GET | {URL}/api/orders/{order}</li>
+                </ul>
+                <br /><br /><br /><br />
+                <h3>Create an Order</h3> <br /><br />
+                Post your order using following JSON pattern. Do not forget to add Bearer Token to your Header
+                <code><pre>{
+                    "ref_id": "1",
+                    
+                    "products": [
+                        {
+                            "sku": "5581595677792",
+                            "quantity": 4
+                        },
+                        {
+                            "sku": "7730755170590",
+                            "quantity": 7
+                        }        
+                    ]
+                }
+                </pre></code>
+                <br /><br /><br /><br />
+                <h3>API Call Examples</h3>
+                <h4>Curl</h4>
+                <pre>curl --location --request POST 'http://corvus.test/api/orders' \
+                --header 'Accept: application/json' \
+                --header 'Content-Type: application/json' \
+                --header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IjRmMWcyM2ExMmFhIn0.eyJpc3MiOiJodHRwOlwvXC9pbnRlbGxlY3QudGVzdCIsImF1ZCI6Imh0dHA6XC9cL2ludGVsbGVjdC50ZXN0IiwianRpIjoiNGYxZzIzYTEyYWEiLCJpYXQiOjE1OTE5OTU0ODQsIm5iZiI6MTU5MTk5NTU0NCwidXNlcl9pZCI6IjIifQ.nqssJef_-_PrjGCzosq-3WAMSxSEVNKNrDr0ojJj7S8' \
+                --data-raw '{
+                    "ref_id": "1",
+                    "products": [
+                        {
+                            "sku": "5581595677792",
+                            "quantity": 4
+                        },
+                        {
+                            "sku": "7730755170590",
+                            "quantity": 7
+                        }        
+                    ]
+                }'
+                </pre>
+                <br /><br />
+                <h4>PHP</h4>
+                <pre>
+                $curl = curl_init();
+                
+                curl_setopt_array($curl, array(
+                  CURLOPT_URL => "http://corvus.test/api/orders",
+                  CURLOPT_RETURNTRANSFER => true,
+                  CURLOPT_ENCODING => "",
+                  CURLOPT_MAXREDIRS => 10,
+                  CURLOPT_TIMEOUT => 0,
+                  CURLOPT_FOLLOWLOCATION => true,
+                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                  CURLOPT_CUSTOMREQUEST => "POST",
+                  CURLOPT_POSTFIELDS =>"{\n    \"ref_id\": \"1\",\n    \"products\": [\n        {\n            \"sku\": \"5581595677792\",\n            \"quantity\": 4\n        },\n        {\n            \"sku\": \"7730755170590\",\n            \"quantity\": 7\n        }        \n    ]\n}",
+                  CURLOPT_HTTPHEADER => array(
+                    "Accept: application/json",
+                    "Content-Type: application/json",
+                    "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IjRmMWcyM2ExMmFhIn0.eyJpc3MiOiJodHRwOlwvXC9pbnRlbGxlY3QudGVzdCIsImF1ZCI6Imh0dHA6XC9cL2ludGVsbGVjdC50ZXN0IiwianRpIjoiNGYxZzIzYTEyYWEiLCJpYXQiOjE1OTE5OTU0ODQsIm5iZiI6MTU5MTk5NTU0NCwidXNlcl9pZCI6IjIifQ.nqssJef_-_PrjGCzosq-3WAMSxSEVNKNrDr0ojJj7S8"
+                  ),
+                ));
+                
+                $response = curl_exec($curl);
+                
+                curl_close($curl);
+                echo $response;
+                
+                </pre>
+                <br /><br />
+                <h4>JavaScript with Jquery</h4>
+                <pre>var settings = {
+                  "url": "http://corvus.test/api/orders",
+                  "method": "POST",
+                  "timeout": 0,
+                  "headers": {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImp0aSI6IjRmMWcyM2ExMmFhIn0.eyJpc3MiOiJodHRwOlwvXC9pbnRlbGxlY3QudGVzdCIsImF1ZCI6Imh0dHA6XC9cL2ludGVsbGVjdC50ZXN0IiwianRpIjoiNGYxZzIzYTEyYWEiLCJpYXQiOjE1OTE5OTU0ODQsIm5iZiI6MTU5MTk5NTU0NCwidXNlcl9pZCI6IjIifQ.nqssJef_-_PrjGCzosq-3WAMSxSEVNKNrDr0ojJj7S8"
+                  },
+                  "data": JSON.stringify({"ref_id":"1","products":[{"sku":"5581595677792","quantity":4},{"sku":"7730755170590","quantity":7}]}),
+                };
+                
+                $.ajax(settings).done(function (response) {
+                  console.log(response);
+                });
+                </pre>
+                <br /><br /><br /><br />
+                <h3>Customer Portal Orders List</h3>
+                <img src="/assets/img/documents/customer-order-list.jpg" class="img-fluid">
+                <br /><br /><br /><br />
+                Customer can track each order. Again the customer can see why an order failed. This can be a wrong SKU, not enough stock level or not existing the product in customers price or stock group. So, the customer can add a new order with corrected file.
+                <br /><br /><br /><br />
+                <img src="/assets/img/documents/customer-order-view.jpg" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
